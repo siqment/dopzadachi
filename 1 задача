@@ -1,0 +1,13 @@
+n = int(input("Введите количество записей о покупках: "))
+purchases = {}
+for _ in range(n):
+    buyer, item, quantity = input("Введите запись о покупке в формате 'Покупатель Товар Количество': ").split()
+    
+    if buyer in purchases:
+        purchases[buyer].append((item, quantity))
+    else:
+        purchases[buyer] = [(item, quantity)]
+for buyer, items in purchases.items():
+    print(buyer + ":")
+    for item, quantity in items:
+        print(item, quantity)
