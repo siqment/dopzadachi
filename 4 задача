@@ -1,0 +1,10 @@
+def remove_element(nums, k):
+    length = len(nums)
+    for i in range(k+1, length):
+        nums[i-1] = nums[i]
+    nums.pop()
+    return nums
+nums = [1, 2, 3, 4, 5]
+k = 2
+result = remove_element(nums, k)
+print(result)
