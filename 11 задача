@@ -1,0 +1,9 @@
+def f(values, number):
+    closest = None
+    for value in values:
+        if closest is None or abs(value - number) < abs(closest - number):
+            closest = value
+        elif abs(value - number) == abs(closest - number) and value < closest:
+            closest = value
+    return closest
+print(f({1, 2, 4, 5}, 3))  # Output: 2
