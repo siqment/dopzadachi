@@ -1,0 +1,13 @@
+countries = {}
+i = 0
+while True:
+    country = input("Введите название страны (или 'СТОП' для окончания ввода): ")
+    if country == "СТОП":
+        break
+    if country not in countries:
+        countries[country] = [i]
+    else:
+        countries[country].append(i)
+    i += 1
+for country, lines in countries.items():
+    print(f"Страна '{country}' встречается в строках: {', '.join(map(str, lines))}")
