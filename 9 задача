@@ -1,0 +1,15 @@
+def shortener(st):
+    stack = []
+    result = ""
+    for char in st:
+        if char == "(":
+            stack.append(char)
+        elif char == ")":
+            while stack and stack[-1] != "(":
+                stack.pop()
+            if stack:
+                stack.pop()
+        else:
+            if not stack:
+                result += char
+    return result
