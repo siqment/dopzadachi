@@ -1,0 +1,14 @@
+def read_last(lines, file):
+    if lines <= 0:
+        print("Количество строк должно быть положительным числом")
+        return
+    try:
+        with open(file, 'r') as f:
+            lines_list = f.readlines()
+            last_lines = lines_list[-lines:]
+            for line in last_lines:
+                print(line.strip())
+    except FileNotFoundError:
+        print("Файл не найден")
+# Пример использования
+read_last(3, "article.txt")
