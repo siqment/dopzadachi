@@ -1,0 +1,15 @@
+def form_set(numbers):
+    result_set = set()
+    count_dict = {}
+    for num in numbers:
+        if num in count_dict:
+            count_dict[num] += 1
+            result_set.add(str(num) * count_dict[num])
+        else:
+            count_dict[num] = 1
+            result_set.add(num)
+    return result_set
+# Пример использования
+numbers = [4, 4, 4, 5, 6, 6, 7]
+result = form_set(numbers)
+print(result)  # Вывод: {4, '44', '444', 5, 6, '66', 7}
